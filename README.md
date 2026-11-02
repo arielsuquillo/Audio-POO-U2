@@ -4,32 +4,40 @@ Proyecto desarrollado para la materia de **Programación Orientada a Objetos (PO
 
 ---
 
-## 🛠️ Estructura del Proyecto
+##  Diagrama de Clases UML
 
-El sistema está compuesto por una clase abstracta principal, múltiples subclases especializadas y clases de soporte que establecen relaciones de agregación y asociación:
+A continuación se muestra el diseño arquitectónico del sistema, reflejando la clase abstracta base, las subclases especializadas, las clases de soporte y sus respectivas relaciones de herencia y asociación:
 
-### 1. Clase Abstracta Base
-* **`ContenidoAudiovisual`**: Define los atributos comunes (`titulo`, `duracionEnMinutos`, `genero`, `anioLanzamiento`), constructores, métodos de encapsulamiento (Getters/Setters) y el método abstracto `mostrarDetalles()`.
-
-### 2. Subclases (Herencia)
-Cada una hereda de `ContenidoAudiovisual` e implementa obligatoriamente el método `mostrarDetalles()`:
-* **`Pelicula`**: Añade atributos como estudio cinematográfico y disponibilidad en streaming.
-* **`SerieDeTV`**: Gestiona temporadas y episodios por temporada.
-* **`Documental`**: Incluye el tema principal y una relación directa con un investigador.
-* **`VideoYouTube`**: Almacena información sobre el canal y las reproducciones.
-* **`CursoOnline`**: Controla la plataforma de difusión y el instructor a cargo.
-* **`TransmisionEnVivo`**: Maneja la plataforma de transmisión y la cantidad de espectadores actuales.
-
-### 3. Clases de Soporte y Relaciones
-* **`Actor`**: Contiene datos sobre el elenco (nombre, edad, nacionalidad, personaje).
-* **`Temporada`**: Administra la estructura de las series (número de temporada, cantidad de episodios, fecha de estreno).
-* **`Investigador`**: Detalla la información de expertos científicos o académicos (nombre, especialidad, años de experiencia).
+![Diagrama de Clases POO](Diagrama%20POO.png)
 
 ---
 
-## 🚀 Ejecución del Proyecto
+##  Estructura del Proyecto
+
+El sistema está compuesto por una clase abstracta principal, múltiples subclases y clases de soporte:
+
+### 1. Clase Abstracta Base
+* **`ContenidoAudiovisual`**: Define los atributos comunes (`titulo`, `genero`), constructores, métodos de encapsulamiento (Getters/Setters) y el método abstracto `mostrarDetalles()`.
+
+### 2. Subclases (Herencia)
+Heredan de `ContenidoAudiovisual` e implementan el método `mostrarDetalles()`:
+* **`Pelicula`**: Gestiona el estudio cinematográfico y estado de streaming.
+* **`SerieDeTV`**: Controla el número de temporadas y episodios.
+* **`Documental`**: Incluye el tema principal y la relación con un investigador.
+* **`VideoYouTube`**: Almacena el canal y las reproducciones.
+* **`CursoOnline`**: Administra la plataforma y el instructor.
+* **`TransmisionEnVivo`**: Maneja la plataforma y los espectadores actuales.
+
+### 3. Clases de Soporte y Relaciones
+* **`Actor`**: Contiene nombre, personaje y su relación de participación/interpretación.
+* **`Temporada`**: Administra los episodios y su agregación/composición con las series.
+* **`Investigador`**: Detalla el nombre y la especialidad vinculada al documental.
+
+---
+
+##  Ejecución del Proyecto
 
 1. Clona este repositorio o descarga los archivos fuente en tu entorno de desarrollo (como Visual Studio Code).
-2. Asegúrate de compilar todos los archivos `.java` en la misma carpeta o paquete:
+2. Asegúrate de compilar todos los archivos `.java` en la misma carpeta:
    ```bash
    javac *.java
